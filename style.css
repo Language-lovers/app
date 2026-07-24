@@ -80,6 +80,7 @@
     border: 1px solid #f5c6cb;
 }
 
+/* --- RETURNED TO ORIGINAL SUBTLE STATE: Light English Target Phrase Box --- */
 .target-phrase {
     font-size: 24px;
     font-weight: bold;
@@ -87,7 +88,10 @@
     border-radius: 8px;
     margin-bottom: 10px;
     cursor: pointer;
-    background-color: #f1f3f5;
+    background-color: #f1f3f5 !important;       /* Restored to your original subtle light grey */
+    color: #212529 !important;                  /* Rich, high-contrast dark charcoal text */
+    border: none !important;                    /* Removes any harsh border lines */
+    box-shadow: none !important;                /* Removes any heavy drop shadows */
 }
 .audio-controls {
     display: flex;
@@ -128,8 +132,9 @@
     25% { transform: translateX(-4px); }
     75% { transform: translateX(4px); }
 }
+
 /* Utility elements */
-.answer-preview { font-size: 20px; min-height: 30px; border-bottom: 2px dashed #dee2e6; padding-bottom: 8px; margin-bottom: 20px; color: #495057; }
+
 .options-headline { font-size: 12px; color: #adb5bd; margin-bottom: 10px; text-transform: uppercase; }
 .current-target-segment {
     text-decoration: underline;
@@ -259,3 +264,404 @@ body {
     color: #007bff !important;                   /* Shifts text color to theme blue */
     transform: translateY(-1px);                 /* Tiny lifting animation */
 }
+
+/* --- FIXED: Symmetrical Hover Animations for Universal Badges --- */
+.footer-pwa-badge:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important; /* Elegant light blue tint */
+    border-color: rgba(0, 123, 255, 0.3) !important;     /* Defined accent border */
+    color: #007bff !important;                            /* Shifts text color to theme blue */
+    transform: translateY(-1px);                         /* Subtly lifts button up */
+}
+
+
+/* --- UPDATED: Perfectly Rounded, Smooth Audio Capsule Row --- */
+.audio-dashboard-row {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 25px auto !important;
+    padding: 10px 22px;                         /* Increased horizontal breathing room */
+    max-width: 290px;
+    background-color: rgba(255, 255, 255, 0.7) !important; 
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-radius: 50px !important;              /* Maxed out to create perfectly round pill edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+    /* ==========================================================================
+   1. CORE APPLICATION LAYOUT & BACKGROUND
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("Couple_on_holiday_by_bed.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Glassmorphism main interface panel window */
+.game-container {
+    background-color: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   2. CONFIGURATION & TOP STATUS DASHBOARD
+   ========================================================================== */
+.settings-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.settings-panel .config-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    font-size: 13px;
+    font-weight: bold;
+    color: #495057;
+    gap: 5px;
+}
+
+.settings-panel select {
+    width: 100%;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    text-align: center;
+    background-color: white;
+}
+
+/* Unified Progress and Category Container Row */
+.unified-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.progress-bar {
+    font-size: 13px;
+    color: #6c757d;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+/* Heat Index Status Badge Systems */
+.category-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-mild {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.category-spicy {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.category-fire {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==========================================================================
+   3. CENTRAL GAMEPLAY ARENA & WORD CONTROLS
+   ========================================================================== */
+/* --- UPDATED: High-Contrast Target Phrase Arena Card --- */
+
+.answer-preview { 
+    font-size: 20px; 
+    min-height: 30px; 
+    border-bottom: 2px dashed #dee2e6; 
+    padding-bottom: 8px; 
+    margin-bottom: 20px; 
+    color: #495057; 
+}
+
+.options-headline { 
+    font-size: 12px; 
+    color: #adb5bd; 
+    margin-bottom: 10px; 
+    text-transform: uppercase; 
+}
+
+.current-target-segment {
+    text-decoration: underline;
+    text-decoration-color: #007bff;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+}
+
+/* Multiple-Choice Word Tiles Grid */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px auto !important; /* Establishes consistent spacing around the block */
+}
+
+.option-btn {
+    padding: 14px;
+    font-size: 16px;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-btn:hover { 
+    border-color: #007bff; 
+    background: #f8f9fa; 
+}
+
+.option-btn.error { 
+    background: #fff5f5; 
+    border-color: #dc3545; 
+    color: #dc3545; 
+    animation: shake 0.3s; 
+}
+
+/* Universal Action Buttons (Skip / Next Navigation) */
+.control-btn {
+    width: 100%; 
+    padding: 14px; 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    display: none;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+/* ==========================================================================
+   4. STREAMLINED INTERACTIVE AUDIO DASHBOARD
+   ========================================================================== */
+.audio-dashboard-row {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 25px auto !important;
+    padding: 10px 20px;
+    max-width: 290px;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.audio-label-prefix {
+    font-size: 11px;
+    font-weight: bold;
+    color: #495057;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.audio-control-pill {
+    padding: 6px 16px;
+    background-color: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 20px !important;
+    color: #495057 !important;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.audio-control-pill:hover {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.voice-toggle.active-voice {
+    background-color: #007bff !important;
+    color: white !important;
+    font-weight: bold;
+    border-color: #007bff;
+}
+
+/* ==========================================================================
+   5. FULL-SCREEN SECURITY AGE GATE GATEWAY
+   ========================================================================== */
+.age-gate-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease;
+}
+
+.age-gate-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.age-gate-card h2 {
+    margin-top: 0;
+    color: #dc3545;
+    font-size: 22px;
+}
+
+.age-gate-card p {
+    color: #495057;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.age-gate-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gate-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.exit-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.exit-btn:hover { 
+    background-color: #5a6268; 
+}
+
+.enter-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.enter-btn:hover { 
+    background-color: #bd2130; 
+}
+
+/* ==========================================================================
+   6. SYMMETRICAL ANONYMOUS FOOTER LINKS
+   ========================================================================== */
+#improve-link, 
+#coffee-link {
+    display: inline-block !important;
+    padding: 6px 14px !important;
+    background-color: rgba(255, 255, 255, 0.55) !important; /* Clean, matching opaque frosting */
+    backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 20px !important;
+    color: #495057 !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    text-decoration: none !important;
+    margin: 0 5px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+#improve-link:hover, 
+#coffee-link:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important; /* Smooth blue transparency on hover */
+    border-color: rgba(0, 123, 255, 0.3) !important;
+    color: #007bff !important;                            /* Shifts text directly to accent blue */
+    transform: translateY(-1px) !important;               /* Symmetrical layout lift animation */
+}
+
+//
+
+* ==========================================================================
+   🎯 FINAL CONTRAST FIX: CRISP DARK SLATE TEXT FOR TRACKERS & PREVIEWS
+   ========================================================================== */
+
+/* ==========================================================================
+   🎯 UNIFIED TEXT CONTRAST SYSTEM
+   ========================================================================== */
+
+/* High-contrast pure black styling for your step counters and "Completed!" text */
+#step-indicator {
+    font-size: 13px !important;
+    color: #000000 !important;                  /* Crisp pure black text */
+    font-weight: bold !important;                /* Heavy weight for quick reading */
+    margin-bottom: 15px !important;              /* Uniform breathing space below */
+}
+
+/* High-contrast dark charcoal styling for your built sentence previews */
+.answer-preview, #answer-preview {
+    font-size: 24px !important;                 /* Increased to match the exact size of your English card */
+    color: #343a40 !important;                  /* Rich, premium dark charcoal grey instead of harsh pure black */
+    font-weight: bold !important;               /* Stands out sharply over background graphics */
+    min-height: 30px !important;                /* Adjusted height to prevent layout jumps with larger text */
+    margin-bottom: 20px !important;
+    border-bottom: 2px dashed #343a40 !important; /* Dark charcoal dashed line matches your phrase text perfectly */
+    padding-bottom: 8px !important;
+}
+

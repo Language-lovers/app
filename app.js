@@ -53,7 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("skip-btn").addEventListener("click", () => initQuestion());
     document.getElementById("next-btn").addEventListener("click", () => initQuestion());
     
-    document.getElementById("target-display").addEventListener("click", () => playAudio(false));
+    const targetElement = document.getElementById("target-display");
+    if (targetElement) {
+        targetElement.addEventListener("click", () => playAudio(false));
+    } else {
+        console.warn("Warning: target-display element was not ready during initial setup.");
+    }
+
     document.getElementById("btn-normal").addEventListener("click", () => playAudio(false));
     document.getElementById("btn-slow").addEventListener("click", () => playAudio(true));
 

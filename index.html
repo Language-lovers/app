@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intimate Phrase Matcher</title>
     <meta name="description" content="Surprise your lover by speaking their language! An interactive, multi-stage language learning puzzle for adult audiences. Practice romantic phrases and intimate terminology in Polish, Spanish, French, Italian, and German.">
-<meta name="keywords" content="learn sexy Polish, learn sexy French, learn sexy German, learn sexy Italian, learn sexy Spanish, intimate language, romantic spanish, bedroom phrases, language trainer, adult language learning, sexy language">
-<meta name="robots" content="index, follow">
-<link rel="manifest" href="manifest.json">
+    <meta name="keywords" content="learn sexy Polish, learn sexy French, learn sexy German, learn sexy Italian, learn sexy Spanish, intimate language, romantic spanish, bedroom phrases, language trainer, adult language learning, sexy language">
+    <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- --- NEW: 18+ Legal Age Verification Gate Overlay --- -->
+
+<!-- ==========================================================================
+   1. 18+ SECURITY AGE GATE OVERLAY
+   ========================================================================== */ -->
 <div id="age-gate" class="age-gate-overlay">
     <div class="age-gate-card">
         <h2>🔞 Age Verification Required</h2>
@@ -19,17 +21,20 @@
         <p>You must be <strong>18 years of age or older</strong> to enter and use this training environment.</p>
         
         <div class="age-gate-controls">
-            <!-- Redirects minors safely back to a neutral educational resource -->
             <button type="button" class="gate-btn exit-btn" onclick="window.location.href='https://bbc.co.uk';">❌ Exit</button>
             <button type="button" class="gate-btn enter-btn" onclick="acceptAgeGate();">✔️ I am 18+</button>
         </div>
     </div>
 </div>
 
+<!-- ==========================================================================
+   2. MAIN APPLICATION PLATFORM CORE
+   ========================================================================== */ -->
 <div class="game-container">
-    <!-- Configuration Dropdowns -->
-<div class="settings-panel">
-        <!-- Language Selector Group -->
+    
+    <!-- A. Interactive Selector Configurations Dashboard -->
+    <div class="settings-panel">
+        <!-- Language & Heat Index Setup Filter Group -->
         <div class="config-group">
             <span>Learn Language</span>
             <select id="lang-select">
@@ -39,17 +44,15 @@
                 <option value="italian">🇮🇹 Italian</option>
                 <option value="german">🇩🇪 German</option>
             </select>
-            <!-- What level type -->
             <select id="category-filter" style="margin-top: 5px; font-size: 11px; padding: 4px; border-radius: 4px;">
-                <!-- The text inside value="" must look exactly like your phrases.js categories -->
                 <option value="all">🌟 All Levels</option>
-                <option value="mild">🟢 Mild (Flirty)</option>
+                <option value="mild" selected>🟢 Mild (Flirty)</option>
                 <option value="spicy">🟡 Spicy (Intimate)</option>
                 <option value="fire">🔴 Fire (Bedroom)</option>
             </select>
         </div>
 
-        <!-- Speaker Custom Group -->
+        <!-- Speaker Demographic Customizer -->
         <div class="config-group">
             <span>I am a</span>
             <select id="speaker-gender">
@@ -58,7 +61,7 @@
             </select>
         </div>
 
-        <!-- Listener Custom Group -->
+        <!-- Listener Demographic Customizer -->
         <div class="config-group">
             <span>Talking to a</span>
             <select id="listener-gender">
@@ -66,58 +69,64 @@
                 <option value="f" selected>♀️ Woman</option>
             </select>
         </div>
-    </div> <!-- This closes your dropdown settings panel -->
+    </div>
 
-
-<!-- Unified Status Bar Dashboard (Saves Vertical Space) -->
-        <!-- Unified Status Bar Dashboard (Cleaned & Streamlined) -->
+    <!-- B. Unified Data Metrics Progress Bar -->
     <div class="unified-status-bar">
-        <!-- Middle: Dynamic Phrase Counter Counter -->
         <div class="progress-bar" id="game-progress">Phrase 0 of 0</div>
-
-        <!-- Right: Category Indicator Badge -->
         <div class="category-badge" id="category-badge">category</div>
     </div>
-
-     <!-- --- STREAMLINED: High-Utility Audio Control Dashboard --- -->
-        <div class="audio-dashboard-row">
-            <span class="audio-label-prefix">🔊 LISTEN:</span>
-            <button type="button" id="btn-normal" class="audio-control-pill">🔊 Normal</button>
-            <button type="button" id="btn-slow" class="audio-control-pill">🐢 Slow</button>
-        </div>
-
-
+    <!-- C -->
     
-    <div class="answer-preview" id="answer-preview"></div>
-    <div class="options-headline" id="step-indicator">Select Step 1</div>
-    <div class="options-grid" id="options-grid"></div>
-        <div class="controls-panel" style="margin-top: 20px;">
-    <button class="control-btn" id="skip-btn" style="background-color: #6c757d; display: block; width: 100%; margin-bottom: 10px;">⏭️ Skip Phrase</button>
-        <button class="control-btn" id="next-btn">Next Phrase →</button>
-    </div>
-    <!-- --- NEW: Streamlined Mailto Improvement Link --- -->
-        <!-- --- Symmetrical Footer Badge Panel --- -->
-        <div style="margin-top: 18px; display: flex; justify-content: center; gap: 15px;">
-            <!-- Trigger button to pop open the anonymous form window -->
-            <button type="button" id="improve-link" class="footer-pwa-badge" style="background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(0, 0, 0, 0.08); cursor: pointer;">💡 Suggestions</button>
-            <a href="https://Ko-fi.com/languagelovers" target="_blank" id="coffee-link" class="footer-pwa-badge coffee-badge">☕ Support Me</a>
-        </div>
+        <!-- 🎯 Core Target Display Arena -->
+        <div id="target-display" class="target-phrase"></div>
+        
+        <!-- 🏷️ Dynamic Part Tracker Indicator -->
+        <div id="step-indicator"></div>
 
+        <!-- 💬 Built Sentence Preview Display -->
+        <div id="answer-preview" class="answer-preview"></div>
+
+
+    <!-- D. Space-Saving Interactive Audio Control Row -->
+    <div class="audio-dashboard-row">
+        <span class="audio-label-prefix">🔊 LISTEN:</span>
+        <button type="button" id="btn-normal" class="audio-control-pill">Normal</button>
+        <button type="button" id="btn-slow" class="audio-control-pill">Slow</button>
+    </div>
+
+    <!-- E. Puzzle Multi-Choice Word Elements Options Grid -->
+    <div id="options-grid" class="options-grid"></div>
+
+    <!-- F. Layout Context Flow Control Button Indicators -->
+    <div style="margin-top: 20px;">
+        <button type="button" id="skip-btn" class="control-btn">Skip Phrase</button>
+        <button type="button" id="next-btn" class="control-btn" style="display: none;">Next Phrase ➔</button>
+    </div>  
+    
+    <!-- G. Fully Symmetrical Translucent Navigation Utility Footer -->
+    <div style="margin-top: 25px; display: flex; justify-content: center; gap: 15px;">
+        <a href="#" id="improve-link" class="footer-pwa-badge" onclick="event.preventDefault(); document.getElementById('improve-modal').style.display='flex';">💡 Suggestions</a>
+        <a href="https://ko-fi.com/languagelovers" target="_blank" id="coffee-link" class="footer-pwa-badge">☕ Support Me</a>
+    </div>
 
 </div>
-<!-- Include separate data file first -->
+
+<!-- ==========================================================================
+   3. BACKGROUND SCRIPTS & STORAGE ENGINES
+   ========================================================================== */ -->
 <script src="phrases.js"></script>
-<!-- Include external logic file -->
 <script src="app.js"></script>
-    <!-- --- 100% Anonymous Popup Suggestion Form Overlay --- -->
+
+<!-- ==========================================================================
+   4. 100% ANONYMOUS ANCHORED USER SUBMISSION BACKDROP MODAL
+   ========================================================================== */ -->
 <div id="improve-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 10000; backdrop-filter: blur(5px);">
     <div style="background: white; padding: 25px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.25); box-sizing: border-box;">
         <h3 style="margin-top:0; color: #495057; font-size: 18px;">💡 Suggest a Correction</h3>
         <p style="font-size: 13px; color: #6c757d; line-height: 1.4; margin-bottom: 15px;">Native speaker? Let me know how to make this phrase sound more natural, passionate, or grammatically correct!</p>
         
-        <!-- 📋 PASTE YOUR UNIQUE FORMSPREE LINK IN THE ACTION FIELD BELOW -->
         <form action="https://formspree.io/f/xpqvyprz" method="POST" id="improve-form">
-            <!-- Hidden inputs automatically tell you what language and phrase they were looking at! -->
             <input type="hidden" name="Language" id="form-lang">
             <input type="hidden" name="Phrase ID" id="form-phrase-id">
             <input type="hidden" name="Original Phrase" id="form-phrase-text">
