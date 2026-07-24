@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intimate Phrase Matcher</title>
+    <meta name="description" content="Surprise your lover by speaking their language! An interactive, multi-stage language learning puzzle for adult audiences. Practice romantic phrases and intimate terminology in Polish, Spanish, French, Italian, and German.">
+<meta name="keywords" content="learn sexy Polish, learn sexy French, learn sexy German, learn sexy Italian, learn sexy Spanish, intimate language, romantic spanish, bedroom phrases, language trainer, adult language learning, sexy language">
+<meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- --- NEW: 18+ Legal Age Verification Gate Overlay --- -->
+<div id="age-gate" class="age-gate-overlay">
+    <div class="age-gate-card">
+        <h2>🔞 Age Verification Required</h2>
+        <p>This application is an educational language tool for mature audiences and contains sexually explicit terminology.</p>
+        <p>You must be <strong>18 years of age or older</strong> to enter and use this training environment.</p>
+        
+        <div class="age-gate-controls">
+            <!-- Redirects minors safely back to a neutral educational resource -->
+            <button type="button" class="gate-btn exit-btn" onclick="window.location.href='https://bbc.co.uk';">❌ Exit</button>
+            <button type="button" class="gate-btn enter-btn" onclick="acceptAgeGate();">✔️ I am 18+</button>
+        </div>
+    </div>
+</div>
+
+<div class="game-container">
+    <!-- Configuration Dropdowns -->
+<div class="settings-panel">
+        <!-- Language Selector Group -->
+        <div class="config-group">
+            <span>Learn Language</span>
+            <select id="lang-select">
+                <option value="polish">🇵🇱 Polish</option>
+                <option value="spanish">🇪🇸 Spanish</option>
+                <option value="french">🇫🇷 French</option>
+                <option value="italian">🇮🇹 Italian</option>
+                <option value="german">🇩🇪 German</option>
+            </select>
+            <!-- What level type -->
+            <select id="category-filter" style="margin-top: 5px; font-size: 11px; padding: 4px; border-radius: 4px;">
+                <!-- The text inside value="" must look exactly like your phrases.js categories -->
+                <option value="all">🌟 All Levels</option>
+                <option value="mild">🟢 Mild (Flirty)</option>
+                <option value="spicy">🟡 Spicy (Intimate)</option>
+                <option value="fire">🔴 Fire (Bedroom)</option>
+            </select>
+        </div>
+
+        <!-- Speaker Custom Group -->
+        <div class="config-group">
+            <span>I am a</span>
+            <select id="speaker-gender">
+                <option value="m" selected>♂️ Man</option>
+                <option value="f">♀️ Woman</option>
+            </select>
+        </div>
+
+        <!-- Listener Custom Group -->
+        <div class="config-group">
+            <span>Talking to a</span>
+            <select id="listener-gender">
+                <option value="m">♂️ Man</option>
+                <option value="f" selected>♀️ Woman</option>
+            </select>
+        </div>
+    </div> <!-- This closes your dropdown settings panel -->
+
+
+<!-- Unified Status Bar Dashboard (Saves Vertical Space) -->
+        <!-- Unified Status Bar Dashboard (Cleaned & Streamlined) -->
+    <div class="unified-status-bar">
+        <!-- Middle: Dynamic Phrase Counter Counter -->
+        <div class="progress-bar" id="game-progress">Phrase 0 of 0</div>
+
+        <!-- Right: Category Indicator Badge -->
+        <div class="category-badge" id="category-badge">category</div>
+    </div>
+
+    <!-- Target Phrase Display -->
+    <div class="target-phrase" id="target-display">Click to listen</div>
+    
+    <!-- Target Phrase Display -->
+    <div class="target-phrase" id="target-display">Click to listen</div>
+    <div class="audio-controls">
+        <button type="button" class="audio-btn" id="btn-normal">🔊 Normal</button>
+        <button type="button" class="audio-btn" id="btn-slow">🐢 Slow</button>
+    </div>
+
+
+    
+    <div class="answer-preview" id="answer-preview"></div>
+    <div class="options-headline" id="step-indicator">Select Step 1</div>
+    <div class="options-grid" id="options-grid"></div>
+        <div class="controls-panel" style="margin-top: 20px;">
+    <button class="control-btn" id="skip-btn" style="background-color: #6c757d; display: block; width: 100%; margin-bottom: 10px;">⏭️ Skip Phrase</button>
+        <button class="control-btn" id="next-btn">Next Phrase →</button>
+    </div>
+    <!-- --- NEW: Streamlined Mailto Improvement Link --- -->
+        <!-- --- Symmetrical Footer Badge Panel --- -->
+        <div style="margin-top: 18px; display: flex; justify-content: center; gap: 15px;">
+            <!-- Trigger button to pop open the anonymous form window -->
+            <button type="button" id="improve-link" class="footer-pwa-badge" style="background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(0, 0, 0, 0.08); cursor: pointer;">💡 Suggestions</button>
+            <a href="https://Ko-fi.com/languagelovers" target="_blank" id="coffee-link" class="footer-pwa-badge coffee-badge">☕ Support Me</a>
+        </div>
+
+
+</div>
+<!-- Include separate data file first -->
+<script src="phrases.js"></script>
+<!-- Include external logic file -->
+<script src="app.js"></script>
+    <!-- --- 100% Anonymous Popup Suggestion Form Overlay --- -->
+<div id="improve-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 10000; backdrop-filter: blur(5px);">
+    <div style="background: white; padding: 25px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.25); box-sizing: border-box;">
+        <h3 style="margin-top:0; color: #495057; font-size: 18px;">💡 Suggest a Correction</h3>
+        <p style="font-size: 13px; color: #6c757d; line-height: 1.4; margin-bottom: 15px;">Native speaker? Let me know how to make this phrase sound more natural, passionate, or grammatically correct!</p>
+        
+        <!-- 📋 PASTE YOUR UNIQUE FORMSPREE LINK IN THE ACTION FIELD BELOW -->
+        <form action="https://formspree.io/f/xpqvyprz" method="POST" id="improve-form">
+            <!-- Hidden inputs automatically tell you what language and phrase they were looking at! -->
+            <input type="hidden" name="Language" id="form-lang">
+            <input type="hidden" name="Phrase ID" id="form-phrase-id">
+            <input type="hidden" name="Original Phrase" id="form-phrase-text">
+            
+            <textarea name="Native Speaker Suggestion" required placeholder="Type your native corrections or slang suggestions here..." style="width: 100%; height: 110px; padding: 10px; border-radius: 8px; border: 1px solid #ced4da; font-family: inherit; box-sizing: border-box; resize: none; margin-bottom: 15px; font-size: 14px;"></textarea>
+            
+            <div style="display: flex; gap: 10px;">
+                <button type="button" onclick="document.getElementById('improve-modal').style.display='none';" style="flex:1; padding: 12px; border: 1px solid #ced4da; background: white; border-radius: 8px; cursor: pointer; font-weight: bold; color: #6c757d;">Cancel</button>
+                <button type="submit" style="flex:1; padding: 12px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
