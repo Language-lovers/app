@@ -82,7 +82,7 @@ function loadNewDeck() {
 
 function initQuestion() {
     if (currentDeck.length === 0) {
-        alert("Completed the selected pool! Shuffling phrases again.");
+        alert("Completed the selected pool! Go again, or try a different level.");
         loadNewDeck();
         return;
     }
